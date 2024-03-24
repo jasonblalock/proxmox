@@ -26,7 +26,7 @@ chmod 400 /.data.key                                   # Set appropriate permiss
 chattr +i /.data.key                                   # Make key immutable
 zfs create -o encryption=on -o keylocation=file:///.data.key -o keyformat=raw rpool/data     # Create a new dataset with encryption enabled
 # Setup systemd service for automatic unlocking of rpool/data on boot
-sudo cat > /etc/systemd/system/zfs-load-key.service <<'EOF'
+cat > /etc/systemd/system/zfs-load-key.service <<'EOF'
 [Unit]
 Description=Load encryption keys
 DefaultDependencies=no
