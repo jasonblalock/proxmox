@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# https://privsec.dev/posts/linux/using-native-zfs-encryption-with-proxmox/
 
 # Encrypt root dataset
 zpool import -f rpool                        # Force import the ZFS pool named 'rpool'
